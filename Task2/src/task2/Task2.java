@@ -58,13 +58,14 @@ static int vowelCounter(String s)
  public static void main(String[] args) {
   String str;
   String ar=new String();
+  String re;
  //Declare Scanner object to read the input
 
    Scanner in = new Scanner(System.in); //
  
    //Get input String
 
-   System.out.println("Please enter a sentence: ");
+   System.out.print("Please enter a sentence: ");
    str = in.nextLine();
    System.out.println("Enter the sub String");
    ar=in.next();
@@ -78,6 +79,7 @@ static int vowelCounter(String s)
     System.out.println(ch);
   }
   String ridMultipleblank = str.replaceAll("\\s","");
+  re = str.replaceAll("[0-9]","");
     System.out.println(ridMultipleblank);
   int a=wordCounter(str);
   int c=vowelCounter(str);
@@ -96,5 +98,6 @@ static int vowelCounter(String s)
       System.out.println("Sub String is not present");
   }
   System.out.println(ridMultipleblank);
+  System.out.println("String after removel is "+re );
 }
 }
