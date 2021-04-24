@@ -77,6 +77,8 @@ static int vowelCounter(String s)
   for(char ch : str.toCharArray()){
     System.out.println(ch);
   }
+  String ridMultipleblank = str.replaceAll("\\s","");
+    System.out.println(ridMultipleblank);
   int a=wordCounter(str);
   int c=vowelCounter(str);
   int d=puncCounter(str);
@@ -93,5 +95,6 @@ static int vowelCounter(String s)
   {
       System.out.println("Sub String is not present");
   }
+  System.out.println(ridMultipleblank);
 }
 }
