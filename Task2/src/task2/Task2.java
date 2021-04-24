@@ -48,6 +48,12 @@ static int vowelCounter(String s)
         }
         return pcount;
     }
+    static boolean subString(String s,String a)
+    {
+        boolean flag=s.contains(a);
+        
+        return flag;
+    }
 
  public static void main(String[] args) {
   String str;
@@ -60,6 +66,8 @@ static int vowelCounter(String s)
 
    System.out.println("Please enter a sentence: ");
    str = in.nextLine();
+   System.out.println("Enter the sub String");
+   ar=in.next();
 //Print the message
 
    System.out.println("Your sentence printed vertically is: ");
@@ -72,8 +80,18 @@ static int vowelCounter(String s)
   int a=wordCounter(str);
   int c=vowelCounter(str);
   int d=puncCounter(str);
+  boolean flag=subString(str,ar);
   System.out.println("Words are"+a);
   System.out.println("Words are"+c);
   System.out.println("Words are"+d);
- }
+  if(flag==true)
+  {
+      System.out.println("Sub String is present");
+      
+  }
+  else
+  {
+      System.out.println("Sub String is not present");
+  }
+}
 }
