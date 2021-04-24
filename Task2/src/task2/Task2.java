@@ -11,10 +11,47 @@ import java.util.Scanner;
  */
 public class Task2 {
 
-
+static int wordCounter(String s)
+    {
+        int coount=0;
+        for(int i=0;i<s.length();i++)
+        {
+           
+                coount=coount+1;
+            
+        }
+        return coount;
+    }
+static int vowelCounter(String s)
+    {
+        int vcount=0;
+        s=s.toLowerCase();
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)=='a'||s.charAt(i)=='e'||s.charAt(i)=='i'||s.charAt(i)=='o'||s.charAt(i)=='u')
+            {
+                vcount=vcount+1;
+            }
+        }
+        return vcount;
+    }
+    static int puncCounter(String s)
+    {
+        int pcount=0;
+        s=s.toLowerCase();
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)==','||s.charAt(i)=='.'||s.charAt(i)=='-'||s.charAt(i)=='@'||s.charAt(i)=='!')
+            {
+                pcount=pcount+1;
+            }
+        }
+        return pcount;
+    }
 
  public static void main(String[] args) {
   String str;
+  String ar=new String();
  //Declare Scanner object to read the input
 
    Scanner in = new Scanner(System.in); //
@@ -32,5 +69,11 @@ public class Task2 {
   for(char ch : str.toCharArray()){
     System.out.println(ch);
   }
+  int a=wordCounter(str);
+  int c=vowelCounter(str);
+  int d=puncCounter(str);
+  System.out.println("Words are"+a);
+  System.out.println("Words are"+c);
+  System.out.println("Words are"+d);
  }
 }
