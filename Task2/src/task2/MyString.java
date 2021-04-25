@@ -59,5 +59,68 @@ public int vowelCounter(String s)
         s=s.replaceAll("[a-z]","");
         return s;
     }
-    
+    public boolean isValidCnic(String regNo)
+{
+     boolean flag=false;
+    int size=regNo.length();
+    if(size>15)
+    {
+        flag=false;
+    }
+    else
+    {
+        if(regNo.charAt(0)>='0'  && regNo.charAt(0)<='9')
+    {
+         if(regNo.charAt(1)>='0' && regNo.charAt(1)<='9')
+         {
+              if(regNo.charAt(2)>='0' && regNo.charAt(0)<='9')
+              {
+                   if(regNo.charAt(3)>='0' && regNo.charAt(3)<='9')
+                   {
+                        if(regNo.charAt(4)>='0' && regNo.charAt(4)<='9')
+                        {
+                            if(regNo.charAt(5)=='-')
+                            {
+                                if(regNo.charAt(6)>='0' && regNo.charAt(6)<='9')
+                                {
+                                    if(regNo.charAt(7)>='0' && regNo.charAt(7)<='9')
+                                    {
+                                        if(regNo.charAt(8)>='0' && regNo.charAt(8)<='9')
+                                        {
+                                             if(regNo.charAt(9)>='0' && regNo.charAt(9)<='9')
+                                             {
+                                                if(regNo.charAt(10)>='0' && regNo.charAt(10)<='9')
+                                                {
+                                                    if(regNo.charAt(11)>='0' && regNo.charAt(11)<='9')
+                                                    {
+                                                        if(regNo.charAt(12)>='0' && regNo.charAt(12)<='9')
+                                                        {
+                                                            if(regNo.charAt(13)>='-')
+                                                            {
+                                                                if(regNo.charAt(14)>='0' && regNo.charAt(14)<='9')
+                                                                {
+                                                                    flag=true;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                             }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                   }
+              }
+         }
+
+    }
+    else
+    {
+        flag=false;
+    }
+    }
+        return false;
+}
 }
