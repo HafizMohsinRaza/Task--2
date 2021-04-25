@@ -11,52 +11,10 @@ import java.util.Scanner;
  */
 public class Task2 {
 
-static int wordCounter(String s)
-    {
-        int coount=0;
-        for(int i=0;i<s.length();i++)
-        {
-           
-                coount=coount+1;
-            
-        }
-        return coount;
-    }
-static int vowelCounter(String s)
-    {
-        int vcount=0;
-        s=s.toLowerCase();
-        for(int i=0;i<s.length();i++)
-        {
-            if(s.charAt(i)=='a'||s.charAt(i)=='e'||s.charAt(i)=='i'||s.charAt(i)=='o'||s.charAt(i)=='u')
-            {
-                vcount=vcount+1;
-            }
-        }
-        return vcount;
-    }
-    static int puncCounter(String s)
-    {
-        int pcount=0;
-        s=s.toLowerCase();
-        for(int i=0;i<s.length();i++)
-        {
-            if(s.charAt(i)==','||s.charAt(i)=='.'||s.charAt(i)=='-'||s.charAt(i)=='@'||s.charAt(i)=='!')
-            {
-                pcount=pcount+1;
-            }
-        }
-        return pcount;
-    }
-    static boolean subString(String s,String a)
-    {
-        boolean flag=s.contains(a);
-        
-        return flag;
-    }
 
  public static void main(String[] args) {
   String str;
+  MyString s= new MyString();
   String ar=new String();
   String re;
  //Declare Scanner object to read the input
@@ -80,24 +38,49 @@ static int vowelCounter(String s)
   }
   String ridMultipleblank = str.replaceAll("\\s","");
   re = str.replaceAll("[0-9]","");
-    System.out.println(ridMultipleblank);
-  int a=wordCounter(str);
-  int c=vowelCounter(str);
-  int d=puncCounter(str);
-  boolean flag=subString(str,ar);
-  System.out.println("Words are"+a);
-  System.out.println("Words are"+c);
-  System.out.println("Words are"+d);
+  int a=s.wordCounter(str);
+  int c=s.vowelCounter(str);
+  int d=s.puncCounter(str);
+  boolean flag=s.subString(str,ar);
+  boolean ch=s.isValidCnic(str);
+  String ph=s.conNumer(str);
+  System.out.println("*******************************************************************");
+  System.out.println("Total Words are"+a);
+    System.out.println("*******************************************************************");
+  System.out.println("Total Vowels are"+c);
+    System.out.println("*******************************************************************");
+  System.out.println("Total Punctuation marks are"+d);
+    System.out.println("*******************************************************************");
+
   if(flag==true)
   {
       System.out.println("Sub String is present");
+        System.out.println("*******************************************************************");
+
       
   }
   else
   {
       System.out.println("Sub String is not present");
+        System.out.println("*******************************************************************");
+
   }
   System.out.println(ridMultipleblank);
-  System.out.println("String after removel is "+re );
+    System.out.println("*******************************************************************");
+
+  System.out.println("String after removel of number is "+re );
+    System.out.println("*******************************************************************");
+    System.out.println("String after removel of alphabets is "+ph );
+      System.out.println("*******************************************************************");
+      if(ch==true)
+      {
+          System.out.println("Given String is Cnic");
+      }
+      else
+      {
+          System.out.println("Given String is not cnic");
+      }
+
+
 }
 }
